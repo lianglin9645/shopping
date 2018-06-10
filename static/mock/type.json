@@ -1,0 +1,317 @@
+{
+	"ret": true,
+	"data": {
+		"cities": {
+			"新品": [{
+					"id": "0001",
+					"imgUrl": "//i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8",
+					"navUrl": {
+						"navUrl": "//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/711275806886438be20e33ec943a904a.jpg?thumb=1&w=500&h=200"
+					}
+				}, {
+					"id": "0002",
+					"imgUrl": "//i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0003",
+					"imgUrl": "//i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0004",
+					"imgUrl": "//i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+
+				}],
+			"手机": [{
+					"id": "0005",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0006",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0007",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0008",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"电视": [{
+					"id": "0005",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0006",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0007",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0008",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"电脑": [{
+					"id": "0009",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0010",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0011",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0012",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"家电": [{
+					"id": "0013",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0014",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0015",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0016",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"家装": [{
+					"id": "0017",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0018",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0019",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0020",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"路由": [{
+					"id": "0021",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0022",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0023",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0024",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"智能": [{
+					"id": "0025",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0026",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0027",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0028",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"儿童": [{
+					"id": "0029",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0030",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0031",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0032",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"灯具": [{
+					"id": "0033",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0034",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0035",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0036",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"电源": [{
+					"id": "0037",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0038",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0039",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0040",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"耳机": [{
+					"id": "0041",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0042",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0043",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0044",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"音箱": [{
+					"id": "0045",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0046",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0047",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0048",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"礼品": [{
+					"id": "0049",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0050",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0051",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0052",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"生活": [{
+					"id": "0053",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0054",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0055",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0056",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"服务": [{
+					"id": "0057",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0058",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0059",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0060",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"米粉卡": [{
+					"id": "0061",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0062",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0063",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0064",
+					"imgUrl": "http://i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+				}],
+			"零售店": [{
+					"id": "0065",
+					"imgUrl": "//i8.mifile.cn/b2c-mimall-media/cae1e9af28aebb1d0e065cbdc08d8f66!120x120.png",
+					"name": "小米8"
+				}, {
+					"id": "0066",
+					"imgUrl": "//i8.mifile.cn/b2c-mimall-media/dc6165304dcced2a3b2cc574e4af9b4a!120x120.png",
+					"name": "小米8 SE"
+				}, {
+					"id": "0067",
+					"imgUrl": "//i8.mifile.cn/b2c-mimall-media/06cabb01bbe4ac5c819ee101e4446a16!120x120.png",
+					"name": "小米MIX 2S"
+				}, {
+					"id": "0068",
+					"imgUrl": "//i8.mifile.cn/b2c-mimall-media/745cd6cbffce6a1c1c1cafbd5abbfed0!120x120.png",
+					"name": "黑鲨游戏手机"
+			}]
+		}
+	}
+}

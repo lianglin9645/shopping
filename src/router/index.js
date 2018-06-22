@@ -4,7 +4,7 @@ import Home from '@/pages/home/Home'
 import Type from '@/pages/type/Type'
 import Buy from '@/pages/buy/Buy'
 import Myself from '@/pages/myself/Myself'
-
+import Detail from '@/pages/detail/Detail'
 
 Vue.use(Router)
 
@@ -29,6 +29,11 @@ export default new Router({
       path: '/myself',
       name: 'Myself',
       component: Myself
+    },
+    {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: Detail
     }
   ]
 })

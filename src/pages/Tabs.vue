@@ -46,10 +46,13 @@ export default {
     left: 0
     right: 0
     z-index: 99
+    box-sizing: inherit
     .footer
+      align-items: center
       display: flex 
-      line-height: .68rem 
-      background: #F2F2F2
+      height: 1rem 
+      box-shadow: 0 3px 14px 2px rgba(0,0,0,.12)
+      background: #fff
       .icon-font
         display: inline-block
         justify-content: flex-end

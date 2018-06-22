@@ -7,17 +7,23 @@
       <img class="car-img" src="//i8.mifile.cn/v1/a1/e560f98a-48bb-25a1-daa2-72bff8cc7c69!144x152.webp">
       <img class="car-img" src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/938f75d98244629b0d29bfc9c4323f8d.png?thumb=1&w=144&h=152">
     </div>
-    <div class="recommend-box" v-for="(item, index) of itemtopList">
-      <div class="recommend">
-        <img class="recommend-img" :src="item.topUrl">
+      <div class="recommend-box" v-for="(item, index) of itemtopList">
+        <div class="recommend">
+          <img class="recommend-img" :src="item.topUrl">
+        </div>
+        <router-link 
+          tag="div" 
+          class="recommend-left" 
+          v-for="(item, index) of itemList" 
+          :key="item.id"
+          :to="'/detail/' + item.id"
+        >
+          <img class="recommend-imgs" :src="item.imgUrl">
+          <p class="title">{{item.title}}</p>
+          <p class="brief">{{item.brief}}</p>
+          <p class="price">{{item.price}}</p>
+        </router-link>
       </div>
-      <div class="recommend-left" v-for="(item, index) of itemList" :key="item.id">
-        <img class="recommend-imgs" :src="item.imgUrl">
-        <p class="title">{{item.title}}</p>
-        <p class="brief">{{item.brief}}</p>
-        <p class="price">{{item.price}}</p>
-      </div>
-    </div>
     <div style="height:12rem"></div>
   </div> 
 </template>

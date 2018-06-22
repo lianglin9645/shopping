@@ -1,12 +1,22 @@
 <template>
   <div>
-    this is car 
+    <buy-header></buy-header>
+    <buy-car></buy-car>
+    <buy-payment></buy-payment>
   </div>
 </template>
 
 <script>
+import BuyHeader from './components/Header'
+import BuyCar from './components/Car'
+import BuyPayment from './components/Payment'
 export default {
-  name:'Buy'
+  name:'Buy',
+  components: {
+    BuyHeader,
+    BuyCar,
+    BuyPayment
+  }
 }
 </script>
 

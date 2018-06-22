@@ -5,7 +5,7 @@
         <li class="item" 
           v-for="(item, key, index) of cities" 
           :key="key" 
-          @click="handleLetterClick" 
+          @click="handleLetterClick($event, index)" 
           :class="{ active : index == navListActiveIndex}"
           @click.native="handleNavClick(index)"
         >
@@ -29,11 +29,8 @@ export default {
     }
   },
   methods: {
-    handleLetterClick (e) {
-      this.$emit('change',e.target.innerText)
-    },
-    handleNavClick(index) {
-      console.log(index)
+    handleLetterClick (event, index) {
+      this.$emit('change',event.target.innerText)
       this.navListActiveIndex = index
     }
   },
@@ -47,6 +44,7 @@ export default {
 
 <style lang="stylus" scoped>
   .list-box
+    overflow-y: hidden
     width: 1.52rem
     .list
       position: fixed

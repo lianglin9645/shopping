@@ -116,10 +116,22 @@ export default {
        })
     },
     check(item) {
+      var check_num =0;
+      var goodsList = this.$store.state.goodsList;
       item.check = !item.check;
       if(item.check) {
         this.checkall = false;
       }
+      for(var i =0; i<goodsList.length; i++) {
+        if(goodsList[i].check){
+          check_num++
+        }
+      }
+      if(check_num == goodsList.length) {
+          this.checkall = true
+        } else {
+          this.checkall = false
+        }
     },
     checkAll() {
       console.log(this.checkAllFlag)

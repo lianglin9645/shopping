@@ -1,102 +1,195 @@
 <template>
-  <div class="car-box">
-    <div class="car-list">
-      <ul>
-        <li class="item" v-for="(item, index) in carList">
-          <div class="ui-flex">
-            <div 
-              class="choose unchecked" 
-              :class="{ 'check' : item.checked }" 
-              @click="handelCarChoose(item)"
-            >              
-            </div>
-            <a  class="imgProduct flex">
-              <img class="imgProduct-img" :src="item.imgUrl">
-            </a>
-            <div class="info">
-              <p class="name">
-                <span>{{item.name}}</span>
-              </p>
-              <div class="price-without">
-                <span>售价：{{item.price}}元</span>
+  <div>
+    <div class="car-box">
+      <div class="no-data" v-if="goodsList== ''">
+        购物车还是空的 
+        <router-link to="/">
+          <p class="no-data-btn">去看看</p>
+        </router-link>
+      </div>
+      <div class="car-list">
+        <ul>
+          <li class="item" v-for="(item, index) in goodsList">
+            <div class="ui-flex">
+              <div 
+                class="choose unchecked" 
+                :class="{ 'check' : item.check }" 
+                @click="check(item)"
+              >              
               </div>
-              <div class="num">
-                <div class="input-number">
-                  <div class="input-sub" @click="changeMoney(item, -1)">
-                    <i class="iconfont icon-font">&#xe696;</i>
-                  </div>
-                  <div class="input-num">
-                    <span v-model="item.num">{{item.num}}</span>
-                  </div>
-                  <div class="input-add" @click="changeMoney(item, 1)">
-                    <i class="iconfont icon-font">&#xe695;</i>
-                  </div>
-                </div> 
-                <div class="delete" @click="delGoods(index)">
-                  <i class="iconfont imgs-icon">&#xe645;</i>
+              <a  class="imgProduct flex">
+                <img class="imgProduct-img" :src="item.imgUrl">
+              </a>
+              <div class="info">
+                <p class="name">
+                  <span>{{item.name}}</span>
+                </p>
+                <div class="price-without">
+                  <span>售价：{{item.price}}元</span>
                 </div>
-                <span>{{item.price * item.num}}</span>
+                <div class="num">
+                  <div class="input-number">
+                    <div class="input-sub" @click="changeMoney('-1', item.id)">
+                      <i class="iconfont icon-font">&#xe696;</i>
+                    </div>
+                    <div class="input-num">
+                      <span v-model="item.num">{{item.num}}</span>
+                    </div>
+                    <div class="input-add" @click="changeMoney('1', item.id)">
+                      <i class="iconfont icon-font">&#xe695;</i>
+                    </div>
+                  </div> 
+                  <div class="delete" @click="delGoods(item.id)">
+                    <i class="iconfont imgs-icon">&#xe645;</i>
+                  </div>
+                  <!-- <span>{{item.price * item.num}}</span> -->
+                </div>
               </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-submit">
+      <div class="selectAll choose" :class="{'checkall': checkall}" @click="checkAll()"> 全选</div>
+      <div class="price-box">合计:{{totalPrice}}</div> 
+      <div class="buy-box" @click="goSettle">结算 ({{count}})</div>
     </div>
   </div>
 </template>
 
 <script>
+import {mapGetters, mapMutations} from "vuex"
 export default {
   name:'BuyCar',
   data () {
     return {
-      carList: [{
-        id: '0001',
-        name: '小米MIX2 全网通版 6GB内存 黑色陶瓷 128GB',
-        price: '2799',
-        num: '3',
-        imgUrl: '//i1.mifile.cn/a1/pms_1505401551.09912910!180x1800.jpg'
-      }, {
-        id: '0002',
-        name: '小米MIX2 全网通版 6GB内存 黑色陶瓷 128GB',
-        price: '2799',
-        num: '2',
-        imgUrl: '//i1.mifile.cn/a1/pms_1505401551.09912910!180x1800.jpg'
-      }, {
-        id: '0003',
-        name: '小米MIX2 全网通版 6GB内存 黑色陶瓷 128GB',
-        price: '2799',
-        num: '10',
-        imgUrl: '//i1.mifile.cn/a1/pms_1505401551.09912910!180x1800.jpg'
-      }]
+      totalMoney:0,
+      checkall:false,
+      id: ''
     }
   },
-  methods: {
-    handelCarChoose (item) {
-      if (typeof item.checked == 'undefined') {
-        this.$set(item,"checked",true);
-      } else {
-        item.checked = !item.checked
-      }
+  computed: {
+    ...mapGetters(['goodsList']),
+    goodsList(){
+      return this.$store.state.goodsList
     },
-    changeMoney (product, way) {
-      if (way > 0) {
-        product.num++;
-      } else {
-        product.num--
-        if (product.num <= 1) {
-          product.num = 1
+    totalPrice () {
+      var totalMoney = 0;      
+      this.$store.state.goodsList.forEach(data => {
+      console.log(data.check)
+        if(data.check) {
+          totalMoney += data.price  * data.num;
+          }
+        })
+      return totalMoney;
+    },
+    count() {
+      var i = 0;
+      this.$store.state.goodsList.forEach(goodsList => {
+        if (goodsList.check) {
+            i ++;
         }
+      });
+      return i;
+    },
+    checkAllFlag() {    
+      console.log(this.count) 
+      return this.count == this.goodsList.length
+    }
+  },
+  mounted (){
+    console.log(this.goodsList)
+  },
+  methods: {
+    ...mapMutations(["updateGoods", "deleteGoods"]),
+    // handelCarChoose (item) {
+    //   if (typeof item.checked == 'undefined') {
+    //     this.$set(item,"checked",true);
+    //   } else {
+    //     item.checked = !item.checked
+    //   }
+    // },
+    findPosition(id){
+      return this.goodsList.findIndex(item=>{
+          return item.id==id
+       })
+    },
+    check(item) {
+      item.check = !item.check;
+      if(item.check) {
+        this.checkall = false;
       }
     },
-    delGoods (index) {
-      this.carList.splice(index, 1)
-    }
+    checkAll() {
+      console.log(this.checkAllFlag)
+      this.checkall = !this.checkall;
+      // console.log(this.checkall)
+      if(this.checkall) {
+        this.$store.state.goodsList.forEach(goodsList => {
+          goodsList.check = true;
+        });
+      } else {
+        this.$store.state.goodsList.forEach(goodsList => {
+          goodsList.check = false;
+        });
+      }
+      // this.totalPrice();
+    },
+    changeMoney (flag, id) {
+      var i = this.findPosition(id)
+      var num=this.goodsList[i].num;
+      if(flag == 1) {
+        num ++;
+      } else {
+        if ( num <=1 ) {
+          return
+        }
+        num --;
+      }
+      console.log(num) 
+      this.updateGoods({
+        index:i,
+        key:"num",
+        value:num
+      })
+    },
+    delGoods (id) {
+      var i=this.findPosition(id);
+      this.deleteGoods(i);
+    }, 
+    goSettle() {
+      this.$store.state.goodsList.forEach(goodsList =>{
+        if(goodsList.check==true){
+          this.id = goodsList.id;
+        }
+      })
+      if(this.id == ''){
+        return console.log("请选择商品")
+      }
+      this.$router.push({
+              path: "Settle",
+              query: {
+                id: this.id
+              }
+            })
+    }  
   }
 }
 </script>
 
 <style lang="stylus" scoped>
+  .no-data
+    text-align: center;
+    font-size: .36rem;
+    line-height:1rem
+    .no-data-btn
+      display: inline-block;
+      padding: .2rem;
+      font-size:.2rem;
+      height: .25rem
+      line-height: 1rem;
+      color: #ff6700;
   .car-list
     background: #fff
     .item
@@ -142,51 +235,85 @@ export default {
           font-size: .24rem
           color: #999
           margin-bottom: .12rem
-        .input-number
-          display: inline-block
-          border: 1px solid #eee
-          .input-sub
+        .num 
+          position: relative
+          .input-number
             display: inline-block
-            width: .6rem
-            height: .6rem
-            position: relative
-            vertical-align: middle
-            background-color: #fafafa
-            text-align: center
-            .icon-font
-              position: absolute
-              top: .3rem
-              left: .15rem
-          .input-num
-            display: inline-block
-            vertical-align: middle
+            border: 1px solid #eee
+            .input-sub
+              display: inline-block
+              width: .6rem
+              height: .6rem
+              position: relative
+              vertical-align: middle
+              background-color: #fafafa
+              text-align: center
+              .icon-font
+                position: absolute
+                top: .3rem
+                left: .15rem
+            .input-num
+              display: inline-block
+              vertical-align: middle
+              min-width: .6rem
+              padding: 0 .12rem
+              text-align: center
+              font-size: .32rem
+            .input-add
+              display: inline-block
+              width: .6rem
+              height: .6rem
+              position: relative
+              vertical-align: middle
+              background-color: #fafafa
+              text-align: center
+              .icon-font
+                position: absolute
+                top: .3rem
+                left: .15rem
+          .delete
+            position: absolute
+            float: right
+            margin-left: 3.2rem
+            top: 0
             min-width: .6rem
-            padding: 0 .12rem
-            text-align: center
-            font-size: .32rem
-          .input-add
-            display: inline-block
-            width: .6rem
             height: .6rem
-            position: relative
-            vertical-align: middle
-            background-color: #fafafa
-            text-align: center
-            .icon-font
-              position: absolute
-              top: .3rem
-              left: .15rem
-        .delete
-          float: right
-          margin-right: .2rem
-          min-width: .6rem
-          height: .6rem
-          line-height: .6rem
-          display: block
-          .imgs-icon
-            width: .6rem
-            height: .6rem
-
+            line-height: .6rem
+            display: block
+            .imgs-icon
+              width: .6rem
+              height: .6rem
+  .bottom-submit
+      position: fixed
+      display: flex
+      bottom: 0
+      left: 0
+      right: 0
+      background: #fff
+      z-index: 98
+      margin-top: 1rem
+      height: 1rem
+      line-height: 1rem
+      text-align: center
+      bottom: 1rem
+      .selectAll
+        font-size: .26rem
+        color: #999
+        width: 100%
+      .choose
+        background: url("//s1.mi.com/m/images/m/check_normal.png") 20% 50% no-repeat
+        background-size: .4rem .4rem
+      .checkall
+        background: url("//s1.mi.com/m/images/m/check_press.png") 20% 50% no-repeat
+        background-size: .4rem .4rem
+      .price-box
+        display: block
+        width: 100%
+      .buy-box
+        width: 100%
+        display: block
+        background: #ff6700
+        color: #fff
 
 
 </style>

@@ -2,7 +2,7 @@
   <div 
     class="choose unchecked" 
     :class="{ 'check' : checkAll }"
-    @click="checkAll(true)"
+    @click="checkAll(false)"
   >
     全选
   </div>
@@ -13,7 +13,7 @@ export default {
   name: 'BuyPayment',
   methods: {
     checkAll (flag) {
-      this.productList.forEach(function (item,index) {
+      this.carList.forEach(function (item,index) {
         if (typeof item.checked == 'undefined') {
         this.$set(item,"checked",this.checkAll);
       } else {

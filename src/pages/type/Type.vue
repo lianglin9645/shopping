@@ -3,6 +3,7 @@
     <type-header></type-header>
     <type-list :cities="cities" @change="handleLetterChange"></type-list>
     <type-center :cities="cities" :letter="letter"></type-center>
+    <tabs></tabs>
   </div>
 </template>
 
@@ -11,12 +12,14 @@ import axios from 'axios'
 import TypeHeader from './components/Header'
 import TypeList from './components/List'
 import TypeCenter from './components/Center'
+import Tabs from "./../Tabs"
 export default {
   name:'Type',
   components: {
     TypeHeader,
     TypeList,
-    TypeCenter
+    TypeCenter,
+    Tabs
   },
   data () {
     return {

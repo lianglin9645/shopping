@@ -5,6 +5,10 @@ import Type from '@/pages/type/Type'
 import Buy from '@/pages/buy/Buy'
 import Myself from '@/pages/myself/Myself'
 import Detail from '@/pages/detail/Detail'
+import Address from '@/pages/address/Address'
+import UpDataAddress from '@/pages/address/UpDataAddress'
+import Settle from '@/pages/pay/Settle'
+
 
 Vue.use(Router)
 
@@ -34,6 +38,24 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
+    },
+    // 地址
+    {
+      path: '/address/',
+      name: 'Address',
+      component: Address
+    },
+     // 新增地址
+     {
+      path: '/UpDataAddress',
+      name: 'UpDataAddress',
+      component: UpDataAddress
+    },
+    // 结算
+     {
+      path: '/settle',
+      name: 'Settle',
+      component: Settle
     }
   ]
 })

@@ -1,26 +1,26 @@
 <template>
-  <div class="container" >
+  <div class="container" v-show="showShopping">
     <div class="msg">
       <div class="close" @click="handelShoppingClose">X</div>
       <div class="pro-info">
         <div class="pro-img">
-          <img src="//i8.mifile.cn/v1/a1/97a8e6f0-db84-6a6c-c5a5-4014b3f1fac8!720x7200.jpg">
+          <img :src="this.imgUrl">
         </div>
         <div class="pro-desc layout">
           <div class="cur-price">
             <div class="price">
-              2599
+              {{this.price}}
             </div>
-            <div class="name">小米MIX 2 6GB+64GB 黑色陶瓷</div>
+            <div class="name">{{this.title}}</div>
           </div>
         </div>       
       </div>
-      <div class="max5">
+      <div class="max5" >
         <div class="mtx2">
           <div class="option-title">版本</div>
           <div class="options-group">
             <div class="option-item" 
-              v-for="(item, index) in goodsList" 
+               v-for="(item, index) in dataList"
               :class="{ active : index === goodsListIndex}"
               @click="handelShoppingChoose(index)"
             >
@@ -43,7 +43,7 @@
             </div>
           </div> 
         </div>
-      <div class="btn-bottom">
+      <div class="btn-bottom" @click="handelAddGoods($route.params.id)">
         <div class="action-box">
           <a class="btn">加入购物车</a>
         </div>
@@ -54,13 +54,22 @@
 </template>
 
 <script>
+import {mapState, mapActions} from "vuex"
   export default {
     name: 'CommonShopping',
+    props: {
+      good: String,
+      title: String,
+      price: String,
+      goodsbrief: String,
+      imgUrl: String
+    },
     data () {
       return {
         goodsListIndex: 0,
         inputnum:1,
-        goodsList:[{
+        showShopping: true,
+        dataList:[{
           id: "0001",
           space: "6GB+64GB",
           price: "2599元"
@@ -80,12 +89,37 @@
       }
     },
     methods: {
+      ...mapActions(['handelAddGoods']),
       handelShoppingClose () {
         this.$emit('close')
       },
       handelShoppingChoose (index) {
         console.log(index)
         this.goodsListIndex = index
+      },
+      handelAddGoods(id) {
+        var carList = this.$store.state.goodsList
+        console.log(this.$store.state.goodsList)
+        //判断是否存在  已存在则不加入
+        var idExist = carList.find(item => { 
+          return item.id == id
+        })
+          if (!idExist) {
+              var data = {
+                  id: this.$route.params.id,
+                  price: this.price,
+                  name: this.title,
+                  num: this.inputnum,
+                  imgUrl: this.imgUrl,
+                  check: false
+              }
+              this.$store.commit('addGoods', data)
+
+            this.showShopping = false
+          } else {
+            this.showShopping = false
+            console('已加入购物车')
+          }
       },
       sub () {
         if(this.inputnum>1) {
@@ -94,7 +128,7 @@
       },
       add () {
         this.inputnum++
-      }
+      },
     }
   }  
 </script>

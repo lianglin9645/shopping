@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
-    <tabs></tabs>
-  <router-view/>
+  <div id="app"> 
+    <!-- <tabs></tabs> -->
+    <keep-alive exclude="Detail">
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
     }
   },
   components: {
-    Tabs
+    // Tabs
   }
 }
 </script>

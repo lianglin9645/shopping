@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/be0f7095a8d06868c8ff4205301c5d2e.jpg?thumb=1&w=720&h=792">
+      <img class="banner-img" :src="this.imgUrl">
     </div>
     <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
   </div>
@@ -11,6 +11,9 @@
 import CommonGallary from '../../../common/gallary/Gallary'
 export default {
   name:'DetailBanner',
+  props: {
+    imgUrl:String
+  },
   data () {
     return {
       showGallary: false,

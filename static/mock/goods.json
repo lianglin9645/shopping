@@ -1,0 +1,60 @@
+{
+    "ret": true,
+    "data": {
+        "good":"3399",
+        "goodstitle": "黑鲨黑鲨黑鲨黑鲨黑鲨黑鲨黑鲨黑鲨",
+        "goods": [{
+          "id": "0001",
+          "imgUrl": "//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c0bd24d4f71813791c2987e4bf41696d.jpg?thumb=1&w=360&h=360",
+          "title":"红米5A 轻巧长续航",
+          "brief": "高通骁龙处理器",
+          "goodsbrief": "8天超长待机 / 137g轻巧机身 / 高通骁龙处理器",
+          "price": "599"
+        }, {
+          "id": "0002",
+          "imgUrl":" //cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8612f157af2c116b7e3fc47356cdb7be.jpg?thumb=1&w=360&h=360",
+          "title":"红米自拍手机S2",
+          "brief": "1600万像素自拍手机",
+          "goodsbrief": "前置1600万 2μm（4合1）超大像素智能美拍 / 后置1200万+500万 AI 双摄 / 骁龙625 八核处理器",
+          "price": "799"
+        }, {
+          "id": "0003",
+          "imgUrl": "//i8.mifile.cn/v1/a1/11a2b2b9-8deb-5177-ac51-eb9c07b03c31!360x360.webp",
+          "title":"红米5",
+          "brief": "12MP旗舰相机，骁龙处理器",
+          "goodsbrief": "8天超长待机 / 137g轻巧机身 / 高通骁龙处理器",
+          "price": "999"
+        }, {
+          "id": "0004",
+          "imgUrl": "//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d68da7f79cc9800a34b1b48e1a439e44.jpg?thumb=1&w=360&h=360",
+          "title": "小米MIX 2",
+          "brief": "5.99大屏，4轴光学防抖",
+          "goodsbrief": "全面屏2.0，5.99''大屏 / 骁龙835旗舰处理器 / 4轴光学防抖 / 6模43频，全球频段",
+          "price": "599"
+        }, {
+          "id": "0005",
+          "imgUrl": "//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c0bd24d4f71813791c2987e4bf41696d.jpg?thumb=1&w=360&h=360",
+          "title":"红米5A 轻巧长续航",
+          "brief": "高通骁龙处理器",
+          "price": "599"
+        }, {
+          "id": "0006",
+          "imgUrl":" //cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8612f157af2c116b7e3fc47356cdb7be.jpg?thumb=1&w=360&h=360",
+          "title":"红米自拍手机S2",
+          "brief": "1600万像素自拍手机",
+          "price": "599"
+        }, {
+          "id": "0007",
+          "imgUrl": "//i8.mifile.cn/v1/a1/11a2b2b9-8deb-5177-ac51-eb9c07b03c31!360x360.webp",
+          "title":"红米5",
+          "brief": "12MP旗舰相机，骁龙处理器",
+          "price": "599"
+        }, {
+          "id": "0008",
+          "imgUrl": "//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d68da7f79cc9800a34b1b48e1a439e44.jpg?thumb=1&w=360&h=360",
+          "title": "小米MIX 2",
+          "brief": "5.99大屏，4轴光学防抖",
+          "price": "599"
+        }]
+    }
+}

@@ -14,9 +14,9 @@
         <router-link 
           tag="div" 
           class="recommend-left" 
-          v-for="(item, index) of itemList" 
+          v-for="(item, index) of goods" 
           :key="item.id"
-          :to="'/detail/' + item.id"
+          :to="{path:'/detail/' + item.id,params:{id:item.id}}"
         >
           <img class="recommend-imgs" :src="item.imgUrl">
           <p class="title">{{item.title}}</p>
@@ -31,33 +31,11 @@
 <script>
 export default {
     name: 'HomeRecommend',
+    props: {
+      goods: Array
+    },
     data () {
       return {
-        itemList: [{
-          id: '0001',
-          imgUrl: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c0bd24d4f71813791c2987e4bf41696d.jpg?thumb=1&w=360&h=360',
-          title:'红米5A 轻巧长续航',
-          brief: '高通骁龙处理器',
-          price: '599'
-        }, {
-          id: '0002',
-          imgUrl: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8612f157af2c116b7e3fc47356cdb7be.jpg?thumb=1&w=360&h=360',
-          title:'红米自拍手机S2',
-          brief: '1600万像素自拍手机',
-          price: '599'
-        }, {
-          id: '0003',
-          imgUrl: '//i8.mifile.cn/v1/a1/11a2b2b9-8deb-5177-ac51-eb9c07b03c31!360x360.webp',
-          title:'红米5',
-          brief: '12MP旗舰相机，骁龙处理器',
-          price: '599'
-        }, {
-          id: '0004',
-          imgUrl: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d68da7f79cc9800a34b1b48e1a439e44.jpg?thumb=1&w=360&h=360',
-          title:'小米MIX 2',
-          brief: '5.99"大屏，4轴光学防抖',
-          price: '599'
-        }],
         itemtopList: [{
           topUrl: '//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b5f5e5856381c53edcbf2718bd7080e0.jpg?thumb=1&w=720&h=280'
         }, {

@@ -13,14 +13,21 @@
 				<a class="buy-a">加入购物车</a>
 			</div>
 		</div>
-    <common-shopping v-show="showShopping" @close="handelShoppingClose"></common-shopping>
+    <common-shopping :title="title" :price="price" :goodsbrief="goodsbrief" :good="good" :imgUrl="imgUrl" v-show="showShopping" @close="handelShoppingClose"></common-shopping>
 	</div>
 </template>
 
 <script>
-import CommonShopping from '../../../common/shopping/Shopping'
+import CommonShopping from './Shopping'
   export default {
     name: 'DetailFooter',
+    props: {
+      good: String,
+      title: String,
+      price: String,
+      goodsbrief: String,
+      imgUrl: String
+    },
     data () {
       return {
         showShopping:false

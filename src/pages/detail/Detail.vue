@@ -1,10 +1,10 @@
 <template>
   <div>
-    <detail-banner></detail-banner>
+    <detail-banner :imgUrl="imgUrl"></detail-banner>
     <detail-header></detail-header>
-    <detail-parameter></detail-parameter>
-    <detail-footer></detail-footer>
-    <div class="content"></div>
+    <detail-parameter :title="title" :price="price" :goodsbrief="goodsbrief" :good="good" :goodstitle="goodstitle"></detail-parameter>
+    <detail-footer :title="title" :price="price" :goodsbrief="goodsbrief" :good="good" :imgUrl="imgUrl"></detail-footer>
+    <div class="content">{{$route.params.id}}</div>
   </div>
 </template>
 
@@ -21,6 +21,51 @@ export default {
     DetailHeader,
     DetailFooter,
     DetailParameter
+  },
+  data() {
+    return {
+      goods: [],
+      good: '',
+      goodstitle: '',
+      newId: '',
+      price: '',
+      title: '',
+      goodsbrief: '',
+      imgUrl: '',
+
+    }
+  },
+  methods: {
+    getDetailInfo () {
+      axios.get('/static/mock/goods.json',{
+        params: {
+          id: this.$route.params.id
+        }
+      }).then(this.handleGetDataSucc)
+    },
+    handleGetDataSucc (res) {
+      let newId = this.$route.params.id
+      // console.log(newId)
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        // console.log(data)
+        this.goods = data.goods
+        this.good = data.good
+        this.goodstitle = data.goodstitle
+        for (var i = 0; i < this.goods.length; i++) {
+          if(this.goods[i].id == newId) {
+            this.price = this.goods[i].price
+            this.title = this.goods[i].title
+            this.goodsbrief = this.goods[i].goodsbrief
+            this.imgUrl = this.goods[i].imgUrl
+          }
+        }
+      }
+    }
+  },
+  mounted () {
+    this.getDetailInfo()
   }
 }
 </script>

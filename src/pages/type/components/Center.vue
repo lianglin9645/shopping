@@ -62,8 +62,9 @@ export default {
     right: 0
     top:49px
     bottom: 52px
-    padding: 0 .32rem
+    pading-bottom: 1rem
     .center-list
+      padding-bottom:50px
       .center-pic
         width: 100%
       .center-title

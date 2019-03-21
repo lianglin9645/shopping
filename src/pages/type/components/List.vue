@@ -63,7 +63,7 @@ export default {
         left: 0
         right: -.3rem
         overflow-y: auto
-        padding: .2rem .3rem .2rem 0
+        padding: .2rem .3rem 1rem 0
         background: #fefefe
         .item
           line-height: .9rem

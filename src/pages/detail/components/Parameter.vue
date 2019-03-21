@@ -2,14 +2,14 @@
   <div class="container">
     <div class="par-box">
       <div class="goods-name">
-        黑鲨游戏手机 液冷更快
+        {{this.title}}
       </div>
       <div class="goods-brief">
-        液冷散热 / 独立图像处理芯片 / 一键游戏模式 / 骁龙845处理器 / 18:9全面屏 / 前后2000万摄像头
+        {{this.goodsbrief}}
       </div>
       <div class="goods-price">
         <div class="price cur-price">
-          3499
+          {{this.price}}
         </div>
       </div>
     </div>
@@ -55,18 +55,39 @@
 </template>
 
 <script>
-import CommonShopping from '../../../common/shopping/Shopping'
+import CommonShopping from './Shopping'
+import axios from 'axios'
   export default {
     name: 'DetailParameter',
+    props: {
+      good: String,
+      title: String,
+      price: String,
+      goodsbrief: String
+    },
     data () {
       return {
         showShopping:false
       }
     },
+    mounted () {
+      this.getGoodsInfo()
+    },
     components: {
       CommonShopping
     },
     methods: {
+      getGoodsInfo () {
+        axios.get(`/static/mock/goods.json/`).then(res => {
+           res = res.data
+          if (res.ret && res.data) {
+            const data = res.data
+            // console.log(data)
+            this.goods = data.goods
+          }
+            })
+      },
+     
       hangelFooterClick () {
         this.showShopping = true
       },

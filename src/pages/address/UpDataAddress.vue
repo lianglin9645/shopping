@@ -20,7 +20,7 @@
                 <li class="li-list">
                   <div class="label">收货人：</div>
                   <div class="ui-input">
-                    <input type="text" name="name" v-model="name" placeholder="真实姓名">
+                    <input type="text" name="name" v-model="userName" placeholder="真实姓名">
                   </div>
                 </li>
                 <li class="li-list">
@@ -32,14 +32,18 @@
                 <li class="li-list">
                   <div class="label">所在地区：</div>
                   <div class="ui-input">
-                    <input type="text" name="city" v-model="city" placeholder="省 市 区 街道信息">
+                    <input type="text" name="streetName" v-model="streetName" placeholder="省 市 区 街道信息">
                   </div>
                 </li>
                 <li class="li-list">
-                  <div class="label">详细地址：</div>
+                  <div class="label">邮政编码：</div>
                   <div class="ui-input">
-                    <input type="text" name="detail" v-model="detail" placeholder="详细地址">
+                    <input type="number" name="postCode" v-model="postCode" placeholder="邮政编码">
                   </div>
+                </li>
+                <li class="li-list">
+                  <div class="label">默认地址：</div>
+                  <van-switch :value="isDefault" @input="onInput" size="18px" />
                 </li>
               </ul>
             </div>
@@ -48,20 +52,26 @@
       </div>
     </div>
     <div class="add">
-      <div class="btn" @click="submit">保存地址</div>
+      <div class="btn" @click="handleClickAdd">保存地址</div>
     </div>
   </div>
 </template>
 <script >
 import {mapGetters, mapMutations} from "vuex"
+// import { Switch } from 'vant';
+import axios from 'axios'
   export default {
       name: 'UpDataAddress',
+      components: {
+        // Switch
+      },
       data () {
         return {
-          name: '',
+          userName: '',
           tel: '',
-          city: '',
-          detail: ''
+          streetName: '',
+          postCode: '',
+          isDefault: false,
         }
       },
       computed:{
@@ -71,6 +81,24 @@ import {mapGetters, mapMutations} from "vuex"
         ...mapMutations(['submitAddress']),
         back () {
           this.$router.go(-1)
+        },
+        onInput(isDefault) {
+          this.isDefault = isDefault;
+          console.log(this.isDefault)
+        },
+        handleClickAdd() {
+           if( this.userName =='' || this.tel =='' || this.streetName =='' || this.postCode ==''){
+            console.log("重要信息为空")
+          }
+          axios.post('/user/addAddress', {
+            userName: this.userName,
+            tel: this.tel,
+            streetName: this.streetName,
+            postCode:this.postCode,
+            isDefault: this.isDefault
+          }).then((res) => {
+            console.log('ok')
+          })
         },
         submit () {
           if( this.name =='' || this.tel =='' || this.city =='' || this.detail ==''){

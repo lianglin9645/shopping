@@ -14,11 +14,16 @@
     <div class="container">
       <div class="page-wrap">
         <div class="manager">
-          <div class="manager-list" v-for="item in address">
+          <div class="manager-list" v-for="item in addressList" >
             <div class="manager-border">
               <ul class="ul-card">
-                <li class="li-name"><span class="consignee">{{item.name}}</span> <span>{{item.tel}}</span> </li>
-                <li class="li-address"><p>{{item.city}}</p> <p>{{item.detail}}</p></li>
+                <li class="li-name">
+                  <span class="consignee">收件人：{{item.userName}}</span> 
+                  <span>电话：{{item.tel}}</span> 
+                  <i class="iconfont add-icon" @click="handleClickDel(item._id)" >&#xe645;</i> 
+                </li>
+                <li class="li-address"><p>地址：{{item.streetName}}</p></li>
+                <li class="li-address"><van-switch :value="item.isDefault" @input="handleClickDefault($event, item._id)" size="18px" /></li>
               </ul>
             </div>
           </div>
@@ -33,21 +38,56 @@
   </div>
 </template>
 <script >
-import {mapGetters} from "vuex"
+// import {mapGetters} from "vuex"
+// import { Switch } from 'vant';
+import axios from 'axios'
   export default {
       name: 'Address',
-      computed: {
-        ...mapGetters(['address']),
-        address() {
-          return this.$store.state.address
-        },
+      components: {
+        // Switch
       },
+      data() {
+        return {
+          addressList: []
+        }
+      },
+      // computed: {
+      //   ...mapGetters(['address']),
+      //   address() {
+      //     return this.$store.state.address
+      //   },
+      // },
       methods:{
         back() {
           this.$router.go(-1)
-        }
+        },
+        getList() {
+          axios.get('/user/addressList').then((res) => {
+            console.log(res)
+            this.addressList = res.data.result.list
+          })
+        },
+        handleClickDel(id) {
+          console.log(id)
+          axios.post('/user/delAddress', {
+            _id: id
+          }).then((res) => {
+            this.getList()
+          })
+        },
+        handleClickDefault(isDefault, id) {
+          console.log(id)
+          if(isDefault) {
+            axios.post('/user/setDefault', {
+              _id: id
+            }).then((res) => {
+              this.getList()
+            })
+          }
+        },
       },
       mounted () {
+        this.getList()
         console.log(this.$store.state.address)
       }
   }
@@ -118,6 +158,8 @@ import {mapGetters} from "vuex"
                 .consignee
                   margin-right: .6rem;
                   color: #f60;
+                .add-icon
+                  float: right;
               .li-address
                 position: relative;
                 padding-right: .5rem;

@@ -5,7 +5,10 @@
         <div class="img">
           <img  src="https://m.mi.com/static/img/avatar.76a75b8f17.png">
         </div>
-        <div  class="name">登录/注册</div>
+        <div v-if="username"  class="name">您好！{{username}}</div>
+        <div v-else class="name"> 
+          <span  @click="handleClickLogin">登录</span>&nbsp;&nbsp;/&nbsp;&nbsp;<span @click="handleClickRegister">注册</span> 
+        </div>
       </div>
     </div>
     <div class="order">
@@ -16,29 +19,48 @@
       <li>待收货</li>
       <li>退换修</li>
     </ul>
-    <ul class="item">
+    <ul>
+      <li v-for="(item, index) in users" :key="index">{{item.id}} - {{item.name}}</li>
+    </ul>
+    <!-- <ul class="item">
       <li>
         <router-link to="address">设置</router-link>
       </li>
-    </ul>
+    </ul> -->
     <tabs></tabs>
   </div>
 </template>
 
 <script>
 import Tabs from "./../Tabs"
+import axios from "axios"
   export default{
     name: 'myself',
     data() {
       return {
-
+        value: '123',
+        showKeyboard: true,
+        users: [],
+        username: ''
       }
     },
-    methods: {
-
-    },
     components:{
-      Tabs
+      Tabs,
+    },
+    mounted() {
+      this.username = sessionStorage.getItem('name');
+    },
+    methods: {
+      handleClickRegister() {
+        this.$router.push({
+            path: "/Register"
+        })
+      },
+      handleClickLogin() {
+        this.$router.push({
+            path: "/Login"
+        })
+      }
     }
   }
 </script>
